@@ -80,6 +80,8 @@ class AlienInvasion:
             self._create_fleet()
             self.ship.center_ship()
 
+            pygame.mouse.set_visible(False)
+
     def _check_keydown_events(self, event):
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
