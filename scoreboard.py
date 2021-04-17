@@ -9,13 +9,15 @@ class Scoreboard:
         self.settings = ai_game.settings
         self.stats = ai_game.stats
 
+        # font settings
         self.text_color = (30, 30, 30)
         self.font = pygame.font.SysFont(None, 48)
 
         self.prep_score()
 
     def prep_score(self):
-        score_str = str(self.stats.score)
+        rounded_score = round(self.stats.score, -1)
+        score_str = "{:,}".format(rounded_score)
         self.score_image = self.font.render(
             score_str, True, self.text_color, self.settings.bg_color)
 
